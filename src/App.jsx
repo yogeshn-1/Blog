@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth_service";
 import { login, logout } from "./store/authSlice";
-import { Header, Footer, Login } from "./components/index.js";
+import { Header, Footer, Login, SignUp } from "./components/index.js";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -25,7 +25,7 @@ function App() {
     <div className="h-screen flex flex-col bg-slate-500 items-center">
       <Header />
       <main className="w-full">
-        <Login />
+        <SignUp />
       </main>
       <Footer />
     </div>
