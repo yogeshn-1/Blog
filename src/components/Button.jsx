@@ -3,14 +3,14 @@ import React from "react";
 const Button = ({
   children,
   type = "button",
-  bgColor = " bg-blue-300",
-  textColor = "white",
+  bgColor = "bg-teal-200",
+  hoverBg = "hover:bg-teal-400",
   className = "",
   ...props
 }) => {
   return (
     <button
-      className={`rounded-md px-2 py-1 ${bgColor} ${textColor} ${className}`}
+      className={`rounded-md px-2 py-1 ${bgColor} ${hoverBg} ${className}`}
       {...props}
     >
       {children}

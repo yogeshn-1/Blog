@@ -4,9 +4,9 @@ const Input = React.forwardRef(
   ({ label, type = "text", className = "", ...props }, { ref }) => {
     const id = useId();
     return (
-      <div className="w-full">
+      <div className="w-full mt-1">
         {label && (
-          <label className="inline-block m-0.5 p-0.5" htmlFor={id}>
+          <label className="inline-block  p-0.5" htmlFor={id}>
             {label}
           </label>
         )}
