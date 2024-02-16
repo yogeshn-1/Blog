@@ -1,10 +1,11 @@
 import React from "react";
 import { SignUp as SignUpComp, Container } from "../components/index";
 
-export const Login = () => {
+const Signup = () => {
   return (
     <Container>
       <SignUpComp />
     </Container>
   );
 };
+export default Signup;
