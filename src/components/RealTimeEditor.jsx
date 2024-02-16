@@ -1,6 +1,7 @@
 import { Editor } from "@tinymce/tinymce-react";
 import React from "react";
 import { Controller } from "react-hook-form";
+import config from "../config/config";
 
 const RealTimeEditor = ({ name, control, label, defaultValue = "" }) => {
   return (
@@ -12,6 +13,7 @@ const RealTimeEditor = ({ name, control, label, defaultValue = "" }) => {
         render={({ field: { onChange } }) => (
           <Editor
             initialValue={defaultValue}
+            apiKey={config.tinymceKey}
             init={{
               height: 500,
               menubar: true,

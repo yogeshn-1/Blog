@@ -62,8 +62,8 @@ const PostForm = ({ post }) => {
   };
 
   return (
-    <form className="w-full flex flex-wrap p-1">
-      <div className="w-3/5 mx-1">
+    <form className="w-full flex flex-wrap p-5 h-fit bg-stone-200/35">
+      <div className="mx-auto max-w-full w-3/5 p-2">
         <Input
           label="Title"
           placeholder="Enter Title"
@@ -76,7 +76,7 @@ const PostForm = ({ post }) => {
           defaultValue={getValues("content")}
         />
       </div>
-      <div className="w-1/2 mx-1">
+      <div className="w-1/2 mx-auto max-w-max p-2">
         <Input
           label="Image"
           type="file"

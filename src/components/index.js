@@ -1,22 +1,28 @@
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
 import Button from "./Button";
-import LogoutBtn from "./Header/LogoutBtn";
-import Logo from "./Logo";
+import CardForPost from "./CardForPost";
+import Container from "./Container";
+import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
 import Input from "./Input";
 import Login from "./Login";
-import SignUp from "./SignUp";
-import Select from "./Select";
+import Logo from "./Logo";
+import LogoutBtn from "./Header/LogoutBtn";
 import RealTimeEditor from "./RealTimeEditor";
+import PostForm from "./Post-Form/PostForm";
+import Select from "./Select";
+import SignUp from "./SignUp";
 export {
-  Header,
-  Footer,
   Button,
-  LogoutBtn,
-  Logo,
+  CardForPost,
+  Container,
+  Footer,
+  Header,
   Input,
   Login,
-  SignUp,
-  Select,
+  Logo,
+  LogoutBtn,
   RealTimeEditor,
+  PostForm,
+  Select,
+  SignUp,
 };
