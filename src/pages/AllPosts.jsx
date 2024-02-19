@@ -10,13 +10,13 @@ const AllPosts = () => {
         setPosts(res.documents);
       }
     });
-  }, [posts]);
+  }, []);
   return (
     <div className="w-full p-2">
       <Container>
         {posts.map((post) => (
           <div key={post.$id} className="p-1 w-1/4">
-            <CardForPost post={post} />
+            <CardForPost {...post} />
           </div>
         ))}
       </Container>

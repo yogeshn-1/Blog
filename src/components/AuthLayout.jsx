@@ -10,7 +10,7 @@ const Protected = ({ children, authentication = "true" /*default*/ }) => {
     if (authentication && authStatus !== authentication) {
       navigate("/login");
     } else if (!authentication && authStatus !== authentication) {
-      useNavigate("/");
+      navigate("/");
     }
     setIsLoading(false);
   }, [navigate, authStatus, authentication]);

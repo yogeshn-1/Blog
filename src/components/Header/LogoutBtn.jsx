@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 const LogoutBtn = () => {
   const dispatch = useDispatch();
   const onLogout = () => {
-    authService.logout().then(() => dispatch(logout));
+    authService.logout().then(() => dispatch(logout()));
   };
   return (
     <button

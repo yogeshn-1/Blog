@@ -29,6 +29,7 @@ const PostForm = ({ post }) => {
 
       //if image is uploaded delete Old image
       if (file) {
+        console.log("Deleting ...", post.image);
         fileServices.deleteFile(post.image);
       }
 
@@ -38,13 +39,14 @@ const PostForm = ({ post }) => {
         image: file ? file.$id : undefined,
       });
       if (dbPost) {
-        navigate(`/post/${dbPost.$id}`);
+        navigate(`/posts/${dbPost.$id}`);
       }
     } else {
       //upload image if given
       const file = data.image[0]
         ? await fileServices.uploadFile(data.image[0])
         : null;
+      console.log("Image file", file);
       // Create Post after uploading image
       if (file) {
         const fileId = file.$id;
@@ -55,14 +57,17 @@ const PostForm = ({ post }) => {
         });
         // redirect to post after post creation
         if (dbPost) {
-          navigate(`/post/${dbPost.$id}`);
+          navigate(`/posts/${dbPost.$id}`);
         }
       }
     }
   };
 
   return (
-    <form className="w-full flex flex-wrap p-5 h-fit bg-stone-200/35">
+    <form
+      onSubmit={handleSubmit(submit)}
+      className="w-full flex flex-wrap p-5 h-fit bg-stone-200/35"
+    >
       <div className="mx-auto max-w-full w-3/5 p-2">
         <Input
           label="Title"

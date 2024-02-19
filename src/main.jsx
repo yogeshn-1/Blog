@@ -9,6 +9,10 @@ import AuthLayout from "./components/AuthLayout.jsx";
 import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+import Addpost from "./pages/Addpost.jsx";
+import AllPosts from "./pages/AllPosts.jsx";
+import EditPost from "./pages/EditPost.jsx";
+import Post from "./pages/Post.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -30,6 +34,38 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               element={
                 <AuthLayout authentication={false}>
                   <Signup />
+                </AuthLayout>
+              }
+            />
+            <Route
+              path="/add-posts"
+              element={
+                <AuthLayout authentication>
+                  <Addpost />
+                </AuthLayout>
+              }
+            />
+            <Route
+              path="/all-posts"
+              element={
+                <AuthLayout authentication>
+                  <AllPosts />
+                </AuthLayout>
+              }
+            />
+            <Route
+              path="/edit-post/:id"
+              element={
+                <AuthLayout authentication>
+                  <EditPost />
+                </AuthLayout>
+              }
+            />
+            <Route
+              path="/posts/:id"
+              element={
+                <AuthLayout authentication>
+                  <Post />
                 </AuthLayout>
               }
             />

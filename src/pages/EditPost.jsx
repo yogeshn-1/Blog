@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import dbServices from "../appwrite/db_service";
 import { useNavigate, useParams } from "react-router-dom";
-import { CardForPost, Container } from "../components/index";
+import { CardForPost, Container, PostForm } from "../components/index";
 
 const EditPost = () => {
   const [post, setPost] = useState(null);
@@ -11,6 +11,7 @@ const EditPost = () => {
     dbServices.getPost(id).then((res) => {
       if (res) {
         setPost(res);
+        console.log(res);
       } else {
         navigate("/");
       }
@@ -19,7 +20,7 @@ const EditPost = () => {
   return post ? (
     <div className="w-full p-2">
       <Container>
-        <CardForPost post={post} />
+        <PostForm post={post} />
       </Container>
     </div>
   ) : null;
