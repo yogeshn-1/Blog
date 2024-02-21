@@ -1,9 +1,10 @@
 import React from "react";
+import logoImage from "../assets/yogi-high-resolution-logo-transparent.png";
 
-const Logo = ({ width = "100px" }) => {
+const Logo = ({ width = "50px" }) => {
   return (
-    <div className="rounded-sm bg-amber-200" style={{ width: width }}>
-      Logo
+    <div className="rounded-sm" style={{ width: width }}>
+      <img src={logoImage} />
     </div>
   );
 };

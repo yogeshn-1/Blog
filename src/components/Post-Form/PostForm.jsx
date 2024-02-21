@@ -29,7 +29,6 @@ const PostForm = ({ post }) => {
 
       //if image is uploaded delete Old image
       if (file) {
-        console.log("Deleting ...", post.image);
         fileServices.deleteFile(post.image);
       }
 
@@ -46,7 +45,6 @@ const PostForm = ({ post }) => {
       const file = data.image[0]
         ? await fileServices.uploadFile(data.image[0])
         : null;
-      console.log("Image file", file);
       // Create Post after uploading image
       if (file) {
         const fileId = file.$id;
