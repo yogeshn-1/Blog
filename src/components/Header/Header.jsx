@@ -33,19 +33,19 @@ const Header = () => {
     },
   ];
   return (
-    <header className="p-1 bg-stone-400 w-full">
-      <nav className="flex justify-between ">
+    <header className="p-1 bg-gray-200 w-full sticky top-0 z-10">
+      <nav className="flex justify-between">
         <div className="mx-1">
           <Link to="/">
             <Logo width="50px" />
           </Link>
         </div>
-        <ul className="flex gap-1 justify-end mx-1">
+        <ul className="flex gap-1 justify-end items-center">
           {navItems.map((item) =>
             item.active ? (
               <li key={item.name}>
                 <button
-                  className="rounded-md px-2 py-0.5 bg-amber-300 hover:bg-amber-500"
+                  className="rounded-full px-2 py-0.5 bg-transparent hover:bg-teal-100 duration-200"
                   onClick={() => navigate(item.url)}
                 >
                   {item.name}

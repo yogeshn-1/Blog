@@ -22,7 +22,7 @@ function App() {
   return loading ? (
     <div>Loading.....</div>
   ) : (
-    <div className="h-screen flex flex-col bg-slate-500 items-center">
+    <div className="min-h-screen flex flex-col bg-gray-800/80 items-center">
       <Header />
       <main className="w-full">
         <Outlet />

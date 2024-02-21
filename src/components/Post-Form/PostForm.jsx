@@ -60,7 +60,7 @@ const PostForm = ({ post }) => {
       }
     }
   };
-
+  console.log(userData);
   return (
     <form
       onSubmit={handleSubmit(submit)}
