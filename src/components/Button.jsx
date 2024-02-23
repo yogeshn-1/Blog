@@ -3,8 +3,8 @@ import React from "react";
 const Button = ({
   children,
   type = "button",
-  bgColor = "bg-teal-200",
-  hoverBg = "hover:bg-teal-400",
+  bgColor = "",
+  hoverBg = "",
   className = "",
   ...props
 }) => {
