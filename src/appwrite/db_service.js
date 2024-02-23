@@ -83,6 +83,19 @@ export class DBService {
       console.log("Appwrite service :: getAllPost :: error", error);
     }
   }
+
+  async getUserPost(userId) {
+    try {
+      console.log(userId);
+      return await this.database.listDocuments(
+        config.appwriteDatabaseID,
+        config.appwriteCollectionId,
+        [Query.equal("userId", userId)]
+      );
+    } catch (error) {
+      console.log("Appwrite service :: getAllPost :: error", error);
+    }
+  }
 }
 
 const dbServices = new DBService();
