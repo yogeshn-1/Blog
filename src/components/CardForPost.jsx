@@ -39,7 +39,7 @@ const Cards = ({ $id, title, image }) => {
       </div>
     );
   return (
-    <div className="bg-slate-200 rounded-md p-2">
+    <div className="bg-[#F5F7F8] rounded-md p-2 text-black">
       <div className="w-full">
         <img
           src={imageUrl}

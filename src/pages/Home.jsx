@@ -58,7 +58,7 @@ const Home = () => {
         <Container>
           <div className="flex flex-wrap">
             <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold hover:text-gray-800">
+              <h1 className="text-2xl font-bold hover:text-gray-200">
                 Login to read posts
               </h1>
             </div>
@@ -72,7 +72,7 @@ const Home = () => {
         <Container>
           <div className="flex flex-wrap">
             <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold hover:text-gray-800">
+              <h1 className="text-2xl font-bold hover:text-gray-200">
                 No Posts to display
               </h1>
             </div>
@@ -82,7 +82,7 @@ const Home = () => {
     );
   return (
     <div className="w-full p-2">
-      <h2 className="text-center text-xl font-bold bg-orange-300 rounded-md py-2">
+      <h2 className="text-center text-xl font-bold bg-[#f0e8da] text-black rounded-md py-2">
         Your Posts
       </h2>
       <Container>

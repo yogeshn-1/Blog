@@ -22,9 +22,9 @@ function App() {
   return loading ? (
     <div>Loading.....</div>
   ) : (
-    <div className="min-h-screen flex flex-col bg-gray-800/80 items-center">
+    <div className="min-h-screen flex flex-col bg-[#9AD0C2] items-center text-white">
       <Header />
-      <main className="w-full">
+      <main className="w-full flex-grow pt-2">
         <Outlet />
       </main>
       <Footer />

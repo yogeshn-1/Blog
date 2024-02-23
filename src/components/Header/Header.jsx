@@ -33,7 +33,7 @@ const Header = () => {
     },
   ];
   return (
-    <header className="p-1 bg-gray-200 w-full sticky top-0 z-10">
+    <header className="p-1 bg-[#1A1A1B] text-white w-full sticky top-0 z-10">
       <nav className="flex justify-between">
         <div className="mx-1">
           <Link to="/">
@@ -45,7 +45,7 @@ const Header = () => {
             item.active ? (
               <li key={item.name}>
                 <button
-                  className="rounded-full px-2 py-0.5 bg-transparent hover:bg-teal-100 duration-200"
+                  className="rounded-full px-2 py-0.5 bg-transparent hover:bg-teal-200 hover:text-black duration-200"
                   onClick={() => navigate(item.url)}
                 >
                   {item.name}
