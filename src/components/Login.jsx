@@ -25,9 +25,9 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center w-full  text-black">
       <div
-        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 shadow-lg`}
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
@@ -41,7 +41,7 @@ const Login = () => {
           Don&apos;t have any account?&nbsp;
           <Link
             to="/signup"
-            className="font-medium text-primary transition-all duration-200 hover:underline"
+            className="font-semibold text-primary transition-all duration-200 hover:underline text-[#fc6c4c]"
           >
             Sign Up
           </Link>
@@ -49,7 +49,7 @@ const Login = () => {
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
         <form
           onSubmit={handleSubmit(login)}
-          className="flex flex-col gap-1 items-center px-6 py-2 mx-auto m-1 border-2 border-red-200 bg-amber-300/30"
+          className="flex flex-col gap-1 items-center px-6 py-2 mx-auto m-1 border-2 border-red-200 bg-amber-300/30 rounded-md"
         >
           <Input
             label="Email"
@@ -63,7 +63,10 @@ const Login = () => {
             placeholder="Enter your password"
             {...register("password", { required: true })}
           />
-          <Button type="submit" className="mt-2 w-max">
+          <Button
+            type="submit"
+            className="mt-2 w-20 text-white shadow-md bg-[#65b5ff] hover:bg-[#2496ff] duration-200 "
+          >
             Login
           </Button>
         </form>

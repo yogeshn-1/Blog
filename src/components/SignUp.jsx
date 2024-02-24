@@ -27,9 +27,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center w-full  text-black">
       <div
-        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 shadow-lg`}
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
@@ -43,7 +43,7 @@ const SignUp = () => {
           Already have an account?&nbsp;
           <Link
             to="/login"
-            className="font-medium text-primary transition-all duration-200 hover:underline"
+            className="font-semibold text-primary transition-all duration-200 hover:underline text-[#4F90FF]"
           >
             Login
           </Link>
@@ -51,7 +51,7 @@ const SignUp = () => {
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
         <form
           onSubmit={handleSubmit(createUser)}
-          className="flex flex-col gap-1 items-center px-6 py-2 mx-auto m-1 border-2 border-red-200 bg-amber-300/30"
+          className="flex flex-col gap-1 items-center px-6 py-2 mx-auto m-1 border-2 border-red-200 bg-amber-300/30 rounded-md"
         >
           <Input
             label="Name"
@@ -71,7 +71,10 @@ const SignUp = () => {
             placeholder="Enter your password"
             {...register("password", { required: true })}
           />
-          <Button type="submit" className="mt-2 w-max">
+          <Button
+            type="submit"
+            className="mt-2 w-24 text-white bg-orange-400 shadow-md hover:bg-[#fb6b1d] duration-200"
+          >
             Sign Up
           </Button>
         </form>

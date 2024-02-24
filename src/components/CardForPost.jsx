@@ -48,7 +48,6 @@ const Cards = ({ $id, title, image }) => {
         />
       </div>
       <h2 className="text-xl my-1">{title}</h2>
-      <p></p>
       <Link to={`/posts/${$id}`}>
         <Button bgColor="bg-purple-500" hoverBg="hover:bg-purple-700">
           Read more...
