@@ -54,11 +54,11 @@ const AllPosts = () => {
       </div>
     );
   return (
-    <div className="w-full p-2">
+    <div className="w-full ">
       <Container>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap gap-2">
           {posts.map((post) => (
-            <div key={post.$id} className="p-1">
+            <div key={post.$id} className="p-1 mx-1 flex-auto">
               <CardForPost {...post} />
             </div>
           ))}
