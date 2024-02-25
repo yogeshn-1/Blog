@@ -8,7 +8,7 @@ const Select = ({ options, label, className = "", ...props }, ref) => {
       <select
         id={id}
         ref={ref}
-        className={`rounded-md ${className}`}
+        className={`rounded-md focus:border border-stone-700 ${className}`}
         {...props}
       >
         {options &&

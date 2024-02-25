@@ -5,7 +5,7 @@ import config from "../config/config";
 
 const RealTimeEditor = ({ name, control, label, defaultValue = "" }) => {
   return (
-    <div className="w-full">
+    <div className="w-full mt-2">
       {label && <label className="m-0.5 p-0.5">{label}</label>}
       <Controller
         name={name || "content"}
