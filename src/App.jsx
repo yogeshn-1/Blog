@@ -20,7 +20,7 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
   return loading ? (
-    <div className="h-screen bg-black ">
+    <div className="h-screen bg-black flex justify-center items-center ">
       <Loader>Loading App</Loader>
     </div>
   ) : (

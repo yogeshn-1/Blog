@@ -153,7 +153,7 @@ const PostForm = ({ post }) => {
             {...register("image", {
               required: post ? false : "Image is required",
             })}
-            className="border-black border py-1 rounded-sm"
+            className="py-1 rounded-sm bg-gray-100"
           />
           <Select
             label="Status"
