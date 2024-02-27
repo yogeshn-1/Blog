@@ -37,7 +37,7 @@ const Header = () => {
       <nav className="flex justify-between">
         <div className="mx-1">
           <Link to="/">
-            <Logo width="50px" />
+            <Logo width="70px" />
           </Link>
         </div>
         <ul className="flex gap-1 justify-end items-center">

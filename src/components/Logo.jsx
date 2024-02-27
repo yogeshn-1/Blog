@@ -1,9 +1,9 @@
 import React from "react";
-import logoImage from "../assets/yogi-high-resolution-logo-transparent.png";
+import logoImage from "../assets/bloggers-haven-high-resolution-logo-transparent.png";
 
-const Logo = ({ width = "50px" }) => {
+const Logo = ({ width = "70px" }) => {
   return (
-    <div className="rounded-sm" style={{ width: width }}>
+    <div className="rounded-full" style={{ width: width }}>
       <img src={logoImage} />
     </div>
   );
