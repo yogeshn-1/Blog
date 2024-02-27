@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth_service";
 import { login, logout } from "./store/authSlice";
-import { Header, Footer } from "./components/index.js";
+import { Header, Footer, Loader } from "./components/index.js";
 import { Outlet } from "react-router-dom";
 function App() {
   const [loading, setLoading] = useState(true);
@@ -20,7 +20,9 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
   return loading ? (
-    <div>Loading.....</div>
+    <div className="h-screen bg-black ">
+      <Loader>Loading App</Loader>
+    </div>
   ) : (
     <div className="min-h-screen flex flex-col bg-[#9AD0C2] items-center text-white">
       <Header />
