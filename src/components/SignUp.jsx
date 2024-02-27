@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../appwrite/auth_service";
 import { login } from "../store/authSlice";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { Button, Input, Logo } from "./index";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, submitCount },
+  } = useForm();
   const [error, setError] = useState();
 
   const createUser = async (data) => {
@@ -23,9 +28,26 @@ const SignUp = () => {
       }
     } catch (error) {
       setError(error.message);
+      toast.error(error.message);
     }
   };
-
+  function validate() {
+    if (errors?.name?.message) {
+      toast.error(errors?.name?.message);
+      return;
+    }
+    if (errors?.email?.message) {
+      toast.error(errors?.email?.message);
+      return;
+    }
+    if (errors?.password?.message) {
+      toast.error(errors?.password?.message);
+      return;
+    }
+  }
+  useEffect(() => {
+    validate();
+  }, [submitCount]);
   return (
     <div className="flex items-center justify-center w-full  text-black">
       <div
@@ -48,7 +70,7 @@ const SignUp = () => {
             Login
           </Link>
         </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+        {/* {error && <p className="text-red-600 mt-8 text-center">{error}</p>} */}
         <form
           onSubmit={handleSubmit(createUser)}
           className="flex flex-col gap-1 items-center px-6 py-2 mx-auto m-1 border-2 border-red-200 bg-amber-300/30 rounded-md"
@@ -57,19 +79,31 @@ const SignUp = () => {
             label="Name"
             type="text"
             placeholder="Enter your Name"
-            {...register("name", { required: true })}
+            {...register("name", { required: "Name cannot be empty" })}
           />
           <Input
             label="Email"
             type="email"
             placeholder="Enter your email"
-            {...register("email", { required: true })}
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Invalid email address",
+              },
+            })}
           />
           <Input
             label="Password"
             type="password"
             placeholder="Enter your password"
-            {...register("password", { required: true })}
+            {...register("password", {
+              required: "Password is required",
+              minLength: {
+                value: 8,
+                message: "Password must be atleast 8 characters",
+              },
+            })}
           />
           <Button
             type="submit"
@@ -78,6 +112,7 @@ const SignUp = () => {
             Sign Up
           </Button>
         </form>
+        <Toaster />
       </div>
     </div>
   );

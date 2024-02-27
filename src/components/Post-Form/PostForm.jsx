@@ -115,7 +115,7 @@ const PostForm = ({ post }) => {
   }, [submitCount]);
   return (
     <section className="w-full">
-      <header className="sm:text-lg md:text-xl font-bold text-center mb-2 bg-[#185a2e] rounded-xl px-4 w-1/2 py-1 mx-auto">
+      <header className="xs:text-base sm:text-lg text-xl font-bold text-center mb-2 bg-[#185a2e] rounded-xl px-4 w-1/2 py-1 mx-auto">
         {post ? "Update Your" : "Create New"} Post
       </header>
       <form
@@ -163,7 +163,7 @@ const PostForm = ({ post }) => {
           />
           <Button
             type="submit"
-            className="bg-[#72e0bf] hover:bg-[#58bd95] hover:text-white"
+            className="bg-[#405DE6] hover:bg-[#5B51D8] hover:text-white duration-200"
           >
             {post ? "Update" : "Post"}
           </Button>
