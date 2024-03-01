@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import dbServices from "../appwrite/db_service";
-import { CardForPost, Container, Loader } from "../components/index";
+import { CardForPost, Container, Loader, Welcome } from "../components/index";
 import { useSelector } from "react-redux";
-
 const Home = () => {
   const [posts, setPosts] = useState(null);
   const userData = useSelector((state) => state.authSlice.userData);
@@ -30,15 +29,9 @@ const Home = () => {
   if (loading) return <Loader>Loading Posts</Loader>;
   if (userData === null)
     return (
-      <div className="w-full py-8 mt-4 text-center">
+      <div className="w-full mt-6">
         <Container>
-          <div className="flex flex-wrap">
-            <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold hover:text-gray-200">
-                Login to read posts
-              </h1>
-            </div>
-          </div>
+          <Welcome />
         </Container>
       </div>
     );

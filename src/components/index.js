@@ -12,6 +12,8 @@ import RealTimeEditor from "./RealTimeEditor";
 import PostForm from "./Post-Form/PostForm";
 import Select from "./Select";
 import SignUp from "./SignUp";
+import Welcome from "../components/Welcome";
+
 export {
   Button,
   CardForPost,
@@ -27,4 +29,5 @@ export {
   PostForm,
   Select,
   SignUp,
+  Welcome,
 };

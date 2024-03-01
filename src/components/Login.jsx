@@ -46,7 +46,11 @@ const Login = () => {
     validate();
   }, [submitCount]);
   return (
-    <div className="flex items-center justify-center w-full  text-black">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className="flex items-center justify-center w-full  text-black"
+    >
       <div
         className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 shadow-lg`}
       >
